@@ -99,24 +99,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenPresenterQr }) 
                     <div className="text-white font-bold">BELONG</div>
                   </div>
                 </div>
-
-                {/* Bottom Overlay Motto */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-[#0B0B0C]/90 border border-[#27272A] p-4 rounded-xl backdrop-blur-md">
-                    <p className="text-[11px] font-mono text-[#E5A855] uppercase tracking-wider">
-                      Study Hub Philosophy
-                    </p>
-                    <p className="text-sm font-semibold text-white mt-0.5 font-sans">
-                      Better Students ·{' '}
-                      <span className="font-serif italic font-normal text-[#E5A855]">
-                        Brighter Futures
-                      </span>
-                    </p>
-                    <p className="text-[11px] text-[#A1A1AA] font-light mt-1">
-                      Same goals. Different journeys. Brighter tomorrows.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
