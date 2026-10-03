@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Study Hub Café — Open 24/7 for University Students</title>
+  <meta name="description" content="We’re creating a place where students can study, work, connect and grab coffee 24/7. More than a café. A place to belong.">
+  <meta property="og:title" content="The Study Hub Café — Coffee · Community · Convenience">
+  <meta property="og:description" content="Study, work, connect and grab coffee 24/7. Amazon package pickup, high-speed WiFi, and student membership perks.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Newsreader (Serif) + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            hub: {
+              bg: '#0B0B0C',
+              card: '#141416',
+              border: '#27272A',
+              accent: '#E5A855',
+              accentHover: '#D49742',
+              text: '#F4F4F5',
+              muted: '#A1A1AA',
+              dark: '#71717A'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Newsreader"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B0B0C;
+      color: #F4F4F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    ::selection {
+      background-color: rgba(229, 168, 85, 0.25);
+      color: #E5A855;
+    }
+  </style>
+</head>
+<body class="bg-[#0B0B0C] text-[#F4F4F5] antialiased min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[#0B0B0C]/90 backdrop-blur-md border-b border-[#27272A] py-4">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="text-[9px] tracking-widest text-[#A1A1AA] uppercase font-mono">THE</span>
+        <div class="flex items-baseline gap-1.5">
+          <span class="text-base sm:text-lg font-bold text-white uppercase font-sans">STUDY HUB</span>
+          <span class="text-xl font-serif italic text-[#E5A855]">Café</span>
+        </div>
+        <span class="text-[9px] text-[#71717A] tracking-wider uppercase font-mono hidden sm:block">
+          Coffee · Community · Convenience
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-[#A1A1AA]">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#spaces" class="hover:text-white transition-colors">Spaces</a>
+        <a href="#lockers" class="hover:text-white transition-colors">Amazon Lockers</a>
+        <a href="#menu" class="hover:text-white transition-colors">Menu</a>
+        <a href="#passes" class="hover:text-white transition-colors">Passes</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="togglePresenterModal(true)" class="p-2 text-[#A1A1AA] hover:text-white border border-[#27272A] rounded-md text-xs font-mono">
+          <span>Join List</span>
+        </button>
+        <button onclick="toggleBookingModal(true)" class="px-4 py-2 text-xs font-bold text-[#0B0B0C] bg-[#E5A855] hover:bg-[#D49742] rounded-md transition-all">
+          JOIN THE HUB &rarr;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="pt-32">
+    <section class="max-w-6xl mx-auto px-6 sm:px-8 pb-20">
+      <!-- Tagline banner -->
+      <div class="flex flex-wrap items-center justify-between text-[11px] text-[#A1A1AA] uppercase font-mono tracking-widest pb-4 border-b border-[#27272A] mb-10 gap-3">
+        <div>COFFEE · COMMUNITY · CONVENIENCE</div>
+        <div class="text-[#E5A855] font-semibold flex items-center gap-1.5">
+          <span>Good Coffee</span>
+          <span class="text-[#71717A]">/</span>
+          <span class="font-serif italic normal-case text-sm text-[#F5BE75]">Brighter Futures</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Headline -->
+        <div class="lg:col-span-7">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+            We’re creating a place where students can <span class="font-serif italic font-normal text-[#E5A855] block sm:inline">study, work, connect and grab coffee 24/7.</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-[#A1A1AA] font-light">
+            More than a café. <span class="font-serif italic text-white text-lg sm:text-xl">A place to belong.</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <button onclick="toggleBookingModal(true)" class="px-7 py-3.5 bg-[#E5A855] hover:bg-[#D49742] text-[#0B0B0C] font-extrabold text-sm uppercase rounded-md shadow-lg transition-all">
+              JOIN THE HUB &rarr;
+            </button>
+            <button onclick="togglePresenterModal(true)" class="px-5 py-3.5 bg-[#141416] hover:bg-[#1A1A1E] text-white border border-[#27272A] text-xs font-semibold rounded-md">
+              Scan to Join List
+            </button>
+          </div>
+
+          <!-- Ripped Note Callout -->
+          <div class="mt-10 max-w-md">
+            <div class="bg-[#F4F4F5] text-[#0B0B0C] p-4 sm:p-5 rounded-md shadow-2xl transform -rotate-1 border border-zinc-300">
+              <div class="text-[10px] uppercase font-mono tracking-widest text-zinc-500 mb-1">Campus Note</div>
+              <div class="text-lg sm:text-xl font-extrabold tracking-tight uppercase leading-tight font-sans text-zinc-900">
+                "Your campus doesn't stop at 5 PM. <span class="font-serif italic normal-case text-amber-700 font-medium">Neither do we.</span>"
+              </div>
+              <div class="mt-2 text-right text-base text-zinc-800 font-bold">🖤</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image with flyer aesthetics -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden border border-[#27272A] bg-[#141416] shadow-2xl relative aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="Students studying late" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent"></div>
+            
+            <!-- Neon sign overlay -->
+            <div class="absolute top-6 right-6 bg-[#0B0B0C]/90 border border-[#27272A] px-3.5 py-2.5 rounded-lg text-right text-[11px] font-mono tracking-widest space-y-1">
+              <div class="text-[#E5A855] font-bold">STUDY</div>
+              <div class="text-white font-bold">CONNECT</div>
+              <div class="text-[#E5A855] font-bold">CREATE</div>
+              <div class="text-white font-bold">BELONG</div>
+            </div>
+
+            <div class="absolute bottom-6 left-6 right-6 bg-[#0B0B0C]/90 border border-[#27272A] p-4 rounded-xl">
+              <p class="text-[11px] font-mono text-[#E5A855] uppercase">Study Hub Philosophy</p>
+              <p class="text-sm font-semibold text-white mt-0.5">Better Students · <span class="font-serif italic font-normal text-[#E5A855]">Brighter Futures</span></p>
+              <p class="text-[11px] text-[#A1A1AA] font-light mt-1">Same goals. Different journeys. Brighter tomorrows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 6 CORE FEATURES FROM FLYER -->
+    <section id="features" class="py-16 border-y border-[#27272A] bg-[#0E0E10]">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <span class="text-[11px] uppercase font-mono tracking-widest text-[#E5A855]">Core Ecosystem</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1.5">
+            Everything you need. <span class="font-serif italic font-normal text-[#A1A1AA]">Under one roof.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">☕</div>
+            <h3 class="text-xs font-bold text-white uppercase">Specialty Coffee & Drinks</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">Single-origin espresso, matcha, and cold brew.</p>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">👥</div>
+            <h3 class="text-xs font-bold text-white uppercase">Study & Meet Spaces</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">Quiet focus bays and team meeting booths.</p>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">📶</div>
+            <h3 class="text-xs font-bold text-white uppercase">High-Speed WiFi</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">1.0 Gbps enterprise symmetrical connection.</p>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">📦</div>
+            <h3 class="text-xs font-bold text-white uppercase">Amazon Package Pick-Up</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">Secure 24/7 locker pickup & returns kiosk.</p>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">💳</div>
+            <h3 class="text-xs font-bold text-white uppercase">Membership Perks</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">Discounts on coffee, free prints, personal locker.</p>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-5 text-center flex flex-col items-center justify-between">
+            <div class="text-2xl mb-2">🕒</div>
+            <h3 class="text-xs font-bold text-white uppercase">Open 24/7</h3>
+            <p class="text-[11px] text-[#A1A1AA] font-light mt-1.5">365 days a year with student ID access.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 SPATIAL PILLARS -->
+    <section id="spaces" class="py-24 border-b border-[#27272A] bg-[#0B0B0C]">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-12 gap-4">
+          <div>
+            <span class="text-[11px] uppercase font-mono tracking-widest text-[#E5A855]">Spatial Pillars</span>
+            <h2 class="text-3xl font-extrabold text-white tracking-tight mt-1">
+              Study · Connect · Create · <span class="font-serif italic font-normal text-[#E5A855]">Belong</span>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#A1A1AA] max-w-sm font-light">
+            Engineered environments so solo research and collaborative sprints never conflict.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono text-[#E5A855] font-bold">STUDY · 0 dB</div>
+              <h3 class="text-lg font-bold text-white mt-1">Silent Sanctuary</h3>
+              <p class="text-xs text-[#A1A1AA] font-light mt-2 leading-relaxed">Dual 27-inch 4K USB-C displays, Herman Miller ergonomic chairs, and 2700K task lighting.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#27272A] flex justify-between text-xs text-[#71717A]">
+              <span>16 / 48 seats free</span>
+              <button onclick="toggleBookingModal(true)" class="text-[#E5A855] font-bold hover:underline">Reserve &rarr;</button>
+            </div>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono text-[#E5A855] font-bold">CONNECT · MURMUR</div>
+              <h3 class="text-lg font-bold text-white mt-1">Collaborative Commons</h3>
+              <p class="text-xs text-[#A1A1AA] font-light mt-2 leading-relaxed">Magnetic whiteboards, 65" wireless screen casting, and 4-8 person project booths.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#27272A] flex justify-between text-xs text-[#71717A]">
+              <span>8 / 36 seats free</span>
+              <button onclick="toggleBookingModal(true)" class="text-[#E5A855] font-bold hover:underline">Reserve &rarr;</button>
+            </div>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono text-[#E5A855] font-bold">CREATE · LAB</div>
+              <h3 class="text-lg font-bold text-white mt-1">Creators Loft</h3>
+              <p class="text-xs text-[#A1A1AA] font-light mt-2 leading-relaxed">Soundproof audio/Zoom podcast booths, wireless laser printing, and hardware lending desk.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#27272A] flex justify-between text-xs text-[#71717A]">
+              <span>9 / 24 seats free</span>
+              <button onclick="toggleBookingModal(true)" class="text-[#E5A855] font-bold hover:underline">Reserve &rarr;</button>
+            </div>
+          </div>
+
+          <div class="bg-[#141416] border border-[#27272A] rounded-xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono text-[#E5A855] font-bold">BELONG · CAFE</div>
+              <h3 class="text-lg font-bold text-white mt-1">Community Lounge</h3>
+              <p class="text-xs text-[#A1A1AA] font-light mt-2 leading-relaxed">Craft espresso bar, Amazon Locker pickup station, and late night warm comforting bowls.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#27272A] flex justify-between text-xs text-[#71717A]">
+              <span>12 / 40 seats free</span>
+              <button onclick="toggleBookingModal(true)" class="text-[#E5A855] font-bold hover:underline">Visit &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMAZON LOCKERS SPOTLIGHT -->
+    <section id="lockers" class="py-20 border-b border-[#27272A] bg-[#0E0E10]">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="bg-[#141416] border border-[#27272A] rounded-2xl p-8 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <span class="text-xs font-mono uppercase text-[#E5A855] tracking-widest">Campus Convenience Hub</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              24/7 Amazon Package Pick-Up & Returns. <span class="font-serif italic font-normal text-[#E5A855] block sm:inline">Never miss a dorm delivery.</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-[#A1A1AA] font-light leading-relaxed">
+              Dorm mailrooms close at 4:30 PM. With Study Hub Locker integration, ship your textbooks, tech gear, and care packages safely 24 hours a day, or drop off prepaid returns anytime.
+            </p>
+          </div>
+          <div class="md:col-span-5 bg-[#0B0B0C] border border-[#27272A] rounded-xl p-6 text-center">
+            <div class="text-3xl mb-2">📦</div>
+            <h4 class="text-sm font-bold text-white uppercase">Study Hub Locker Node</h4>
+            <p class="text-xs text-[#A1A1AA] mt-1 font-light">Select "Study Hub East Quad Locker" as your delivery address at Amazon checkout.</p>
+            <button onclick="toggleBookingModal(true)" class="mt-4 w-full py-2 bg-[#E5A855] text-[#0B0B0C] text-xs font-bold uppercase rounded">
+              Activate in Membership &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSES (JOIN THE HUB) -->
+    <section id="passes" class="py-24 border-b border-[#27272A] bg-[#0B0B0C]">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-xl mx-auto pb-14">
+          <span class="text-[11px] uppercase font-mono tracking-widest text-[#E5A855]">Student Membership Perks</span>
+          <h2 class="text-3xl font-extrabold text-white tracking-tight mt-1">
+            Passes Built for Student Budgets. <span class="font-serif italic font-normal text-[#A1A1AA]">Zero hidden fees.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-7 flex flex-col justify-between border bg-[#141416] border-[#E5A855] shadow-xl relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#E5A855] text-[#0B0B0C] text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full font-mono">Campus Favorite</div>
+            <div>
+              <h3 class="text-base font-bold text-white uppercase">Day Scholar Pass</h3>
+              <div class="mt-5 flex items-baseline gap-1.5">
+                <span class="text-4xl font-extrabold text-white">$14</span>
+                <span class="text-xs text-[#71717A] font-mono">/ per day pass</span>
+              </div>
+              <p class="mt-3 text-xs text-[#A1A1AA] font-light leading-relaxed">
+                Flexible 12-hour workstation access, 1 specialty coffee included, unlimited drip refills.
+              </p>
+            </div>
+            <button onclick="toggleBookingModal(true)" class="mt-8 w-full py-3 bg-[#E5A855] text-[#0B0B0C] font-extrabold text-xs uppercase rounded">
+              JOIN THE HUB &rarr;
+            </button>
+          </div>
+
+          <div class="rounded-2xl p-7 flex flex-col justify-between border bg-[#141416]/50 border-[#27272A]">
+            <div>
+              <h3 class="text-base font-bold text-white uppercase">Night Owl Sprint</h3>
+              <div class="mt-5 flex items-baseline gap-1.5">
+                <span class="text-4xl font-extrabold text-white">$12</span>
+                <span class="text-xs text-[#71717A] font-mono">/ 9 PM – 7 AM</span>
+              </div>
+              <p class="mt-3 text-xs text-[#A1A1AA] font-light leading-relaxed">
+                All-night quiet desk reservation, fresh tea station, and 24/7 security escort.
+              </p>
+            </div>
+            <button onclick="toggleBookingModal(true)" class="mt-8 w-full py-3 bg-[#0B0B0C] hover:bg-[#1A1A1E] text-white border border-[#27272A] font-bold text-xs uppercase rounded">
+              JOIN THE HUB &rarr;
+            </button>
+          </div>
+
+          <div class="rounded-2xl p-7 flex flex-col justify-between border bg-[#141416]/50 border-[#27272A]">
+            <div>
+              <h3 class="text-base font-bold text-white uppercase">Hub Semester Member</h3>
+              <div class="mt-5 flex items-baseline gap-1.5">
+                <span class="text-4xl font-extrabold text-white">$79</span>
+                <span class="text-xs text-[#71717A] font-mono">/ per month</span>
+              </div>
+              <p class="mt-3 text-xs text-[#A1A1AA] font-light leading-relaxed">
+                24/7 biometric keycard, personal locker, 24/7 Amazon Package Locker receiving.
+              </p>
+            </div>
+            <button onclick="toggleBookingModal(true)" class="mt-8 w-full py-3 bg-[#0B0B0C] hover:bg-[#1A1A1E] text-white border border-[#27272A] font-bold text-xs uppercase rounded">
+              JOIN THE HUB &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#27272A] py-14 text-xs text-[#71717A]">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 text-white font-bold text-base uppercase">
+          <span>The Study Hub</span>
+          <span class="text-[#E5A855] font-serif italic normal-case text-lg">Café</span>
+        </div>
+        <p class="text-xs text-[#A1A1AA] mt-1 font-light">Coffee · Community · Convenience</p>
+      </div>
+
+      <div class="text-center md:text-right">
+        <div class="text-sm font-bold text-white uppercase tracking-wider">Coffee Today. Bigger Tomorrows.</div>
+        <div class="text-xs text-[#E5A855] font-mono mt-0.5">@TheStudyHubCafe</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QR MODAL -->
+  <div id="presenterModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-[#141416] border border-[#27272A] rounded-2xl max-w-sm w-full p-6 text-white text-center">
+      <div class="flex justify-between items-center pb-3 border-b border-[#27272A]">
+        <h3 class="font-bold text-xs uppercase text-[#E5A855] font-mono">The Study Hub Café</h3>
+        <button onclick="togglePresenterModal(false)" class="text-[#A1A1AA] hover:text-white text-lg">&times;</button>
+      </div>
+      <div class="py-6 flex flex-col items-center">
+        <h4 class="text-base font-extrabold uppercase mb-1">Scan to Join Our List</h4>
+        <div class="p-3 bg-white rounded-xl my-3">
+          <svg class="w-36 h-36 text-black" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10 10 h24 v24 h-24 z M14 14 v16 h16 v-16 z M18 18 h8 v8 h-8 z" />
+            <path d="M66 10 h24 v24 h-24 z M70 14 v16 h16 v-16 z M74 18 h8 v8 h-8 z" />
+            <path d="M10 66 h24 v24 h-24 z M14 70 v16 h16 v-16 z M18 74 h8 v8 h-8 z" />
+            <rect x="38" y="10" width="6" height="6" />
+            <rect x="48" y="14" width="8" height="6" />
+            <rect x="38" y="24" width="6" height="8" />
+            <rect x="50" y="26" width="6" height="6" />
+            <rect x="10" y="38" width="6" height="8" />
+            <rect x="22" y="38" width="10" height="6" />
+            <rect x="36" y="38" width="6" height="6" />
+            <rect x="46" y="38" width="10" height="8" />
+            <rect x="62" y="38" width="8" height="6" />
+            <rect x="76" y="38" width="6" height="8" />
+            <rect x="86" y="38" width="8" height="6" />
+            <rect x="38" y="50" width="8" height="6" />
+            <rect x="52" y="50" width="6" height="8" />
+            <rect x="64" y="48" width="6" height="12" />
+            <rect x="76" y="52" width="12" height="6" />
+            <rect x="38" y="62" width="6" height="10" />
+            <rect x="48" y="64" width="10" height="6" />
+            <rect x="62" y="66" width="8" height="6" />
+            <rect x="76" y="64" width="6" height="10" />
+            <rect x="88" y="66" width="6" height="6" />
+            <rect x="38" y="78" width="10" height="6" />
+            <rect x="54" y="76" width="6" height="8" />
+            <rect x="66" y="78" width="10" height="6" />
+            <rect x="82" y="78" width="10" height="6" />
+            <rect x="42" y="88" width="6" height="6" />
+            <rect x="54" y="88" width="8" height="6" />
+            <rect x="70" y="88" width="6" height="6" />
+            <rect x="82" y="88" width="8" height="6" />
+          </svg>
+        </div>
+        <p class="text-xs text-[#E5A855] font-bold">@TheStudyHubCafe</p>
+        <p class="text-[10px] text-[#71717A] uppercase mt-1">Coffee Today. Bigger Tomorrows.</p>
+      </div>
+      <button onclick="togglePresenterModal(false)" class="w-full py-2 bg-[#E5A855] text-[#0B0B0C] font-bold text-xs rounded">Close</button>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="bg-[#141416] border border-[#27272A] rounded-2xl max-w-md w-full p-6 text-white">
+      <div class="flex justify-between items-center pb-4 border-b border-[#27272A]">
+        <h3 class="font-bold text-sm uppercase">Join The Hub · Instant Pass</h3>
+        <button onclick="toggleBookingModal(false)" class="text-[#A1A1AA] hover:text-white text-lg">&times;</button>
+      </div>
+      <div class="py-4 space-y-4 text-xs">
+        <div>
+          <label class="block text-[#A1A1AA] mb-1">Student Name</label>
+          <input type="text" value="Alex Chen" class="w-full bg-[#0B0B0C] border border-[#27272A] p-2 rounded text-white">
+        </div>
+        <div>
+          <label class="block text-[#A1A1AA] mb-1">University Student ID</label>
+          <input type="text" value="UNI-849204" class="w-full bg-[#0B0B0C] border border-[#27272A] p-2 rounded text-white">
+        </div>
+        <div>
+          <label class="block text-[#A1A1AA] mb-1">Select Pass Tier</label>
+          <select class="w-full bg-[#0B0B0C] border border-[#27272A] p-2 rounded text-white">
+            <option>Day Scholar Pass ($14/day)</option>
+            <option>Night Owl Sprint ($12/night)</option>
+            <option>Hub Semester Member ($79/mo)</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-4 border-t border-[#27272A]">
+        <button onclick="alert('Welcome to The Study Hub! Pass issued for Bay S-14. Tap card at turnstile.'); toggleBookingModal(false)" class="w-full py-2.5 bg-[#E5A855] text-[#0B0B0C] font-extrabold text-xs uppercase rounded">
+          Issue Instant Turnstile Pass &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleBookingModal(show) {
+      const modal = document.getElementById('bookingModal');
+      if (show) modal.classList.remove('hidden');
+      else modal.classList.add('hidden');
+    }
+    function togglePresenterModal(show) {
+      const modal = document.getElementById('presenterModal');
+      if (show) modal.classList.remove('hidden');
+      else modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

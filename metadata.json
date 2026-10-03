@@ -1,0 +1,6 @@
+{
+  "name": "Study Hub Cafe",
+  "description": "24/7 University Study & Specialty Cafe — Designed for late-night productivity, collaboration, and student wellness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
